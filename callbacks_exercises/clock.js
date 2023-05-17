@@ -16,7 +16,9 @@ class Clock{
         // return ${this.hours};
         
         const time = `${this.hours}:${this.minutes}:${this.seconds} ${this.ampm}`;
-        console.log(time);
+        // console.log(time);
+        document.getElementById('clock-container').innerText = time;
+        document.getElementById('hour').innerText = new Date().getUTCMonth();
     }
     _tick() {
         this.seconds +=1;

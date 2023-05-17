@@ -1,0 +1,22 @@
+
+#clock-container{
+    display: block;
+    block-size: 50px;
+    width: 500px;
+    align-items: center;
+    font-size: 50px;
+    padding: 30px;
+    border: 2px dashed black;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(184, 210, 147);
+    font-family: 'Noto Color Emoji', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+
+
+}
+
+#clock-container:hover {
+    background-color: black;
+    color: white;
+}
