@@ -5,15 +5,18 @@ class Clock{
         this.hours = currentTime.getHours();
         this.minutes=currentTime.getMinutes();
         this.seconds=currentTime.getSeconds();
-
+        this.ampm = this.hours>= 12 ? 'pm' : 'am';
+        this.hours = this.hours%12;
+        this.hours = this.hours ? this.hours : 12;
         this.printTime();
         setInterval(this._tick.bind(this),1000);
     }
 
     printTime() {
-        // return '${this.hours}:${this.minutes}:${this.seconds}';
-        let hour = '${this.hours}';
-        console.log(hour);
+        // return ${this.hours};
+        
+        const time = `${this.hours}:${this.minutes}:${this.seconds} ${this.ampm}`;
+        console.log(time);
     }
     _tick() {
         this.seconds +=1;
@@ -36,9 +39,10 @@ class Clock{
     }
 
     _incrementHours() {
-        this.hours = (this.hours+1)%12;
+        this.hours = (this.hours+1)%24;
     }
 
 }
 
 const clock = new Clock();
+
